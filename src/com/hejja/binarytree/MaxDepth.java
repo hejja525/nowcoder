@@ -17,23 +17,23 @@ public class MaxDepth {
         public TreeNode(int val) {
             this.val = val;
         }
+    }
 
-        /**
-         *
-         * @param root TreeNode类
-         * @return int整型
-         */
-        public int maxDepth (TreeNode root) {
-            return process(root);
-        }
+    /**
+     *
+     * @param root TreeNode类
+     * @return int整型
+     */
+    public int maxDepth (TreeNode root) {
+        return process(root);
+    }
 
-        public int process(TreeNode root) {
-            if (root == null) {
-                return 0;
-            }
-            int left = process(root.left);
-            int right = process(root.right);
-            return Math.max(left, right) + 1;
+    public int process(TreeNode root) {
+        if (root == null) {
+            return 0;
         }
+        int left = process(root.left);
+        int right = process(root.right);
+        return Math.max(left, right) + 1;
     }
 }
